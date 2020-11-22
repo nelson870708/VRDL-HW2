@@ -38,5 +38,29 @@ The following specs were used to create the original solution.
     you can use more CUDA versions such as 9.0.
 
 
+3. Install mmcv-full, I recommend you to install the pre-build package as below.
 
+    ```
+    pip install mmcv-full==latest+torch1.6.0+cu101 -f https://download.openmmlab.com/mmcv/dist/index.html
+    ```
+    See [here](https://github.com/open-mmlab/mmcv#install-with-pip) for different versions of MMCV compatible to different PyTorch and CUDA versions.
+    Optionally you can choose to compile mmcv from source by the following command
+
+    ```shell
+    pip install mmcv-full
+    ```
+
+4. Clone the MMDetection repository.
+
+    ```
+    git clone https://github.com/open-mmlab/mmdetection.git
+    cd mmdetection
+    ```
+
+5. Install build requirements and then install MMDetection.
+
+    ```
+    pip install -r requirements/build.txt
+    pip install -v -e .  # or "python setup.py develop"
+    ```
 
