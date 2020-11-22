@@ -62,7 +62,6 @@ The following specs were used to create the original solution.
 ### Verification
 
 To verify whether MMDetection and the required environment are installed correctly, we can run sample python codes to initialize a detector and inference a demo image:
-
 ```python
 from mmdet.apis import init_detector, inference_detector
 
@@ -73,16 +72,19 @@ model = init_detector(config_file, device=device)
 # inference the demo image
 inference_detector(model, 'demo/demo.jpg')
 ```
+Note: You should cd to mmdetection dirtectory.
 
 The above code is supposed to run successfully upon you finish the installation.
 
 ## Dataset Preparation
+
 You can download the data [here](https://drive.google.com/drive/u/1/folders/1Ob5oT9Lcmz7g5mVOcYH3QugA7tV3WsSl). The label is at the train directory, called "digitStruct.mat".
 
-### Prepare Images
+### Prepare Data and Code
+
 After downloading, the data directory is structured as:
 ```
-data
++- data
   +- train
     +- 1.png
     +- 2.png
@@ -91,4 +93,34 @@ data
     +- 1.png
     +- 2.png
     ...
++- mmdetection
+  ...
+training_data_annotation.py
+testing_data_annotation.py
+faster_rcnn_r50_digit_number.py
 ```
+### Data Preprocessing
+It is going to split the training data randomly to mark training data and validation data in the json file, called "train.json". The ratio of the training data and valid data is 8 : 2
+
+```shell
+python3 training_data_annotations.py
+```
+
+## Training
+You can train the model by following:
+
+```shell
+python3 mmdetection/tools/train.py faster_rcnn_r50_digit_number.py
+```
+
+## Testing
+You can test the model and make a json submission file as following:
+
+```shell
+python3 mmdetection/tools/test.py faster_rcnn_r50_digit_number.py
+```
+
+
+
+
+
