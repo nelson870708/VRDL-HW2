@@ -109,6 +109,11 @@ python3 mmdetection/tools/train.py faster_rcnn_r50_digit_number.py
 ## Testing
 You can test the model and make a json submission file as following:
 
+First, run the following command to make annotations for training data.
+```shell
+python3 testing data_annotations.py
+```
+Then, run the following command to make a json file.
 ```shell
 python3 mmdetection/tools/test.py faster_rcnn_r50_digit_number.py
 ```
