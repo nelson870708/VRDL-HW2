@@ -29,7 +29,7 @@ The following specs were used to create the original solution.
 3. Install mmcv-full, I recommend you to install the pre-build package as below.
 
     ```
-    pip install mmcv-full==latest+torch1.6.0+cu101 -f https://download.openmmlab.com/mmcv/dist/index.html
+    pip install mmcv-full==latest+torch1.7.0+cu102 -f https://download.openmmlab.com/mmcv/dist/index.html
     ```
     See [here](https://github.com/open-mmlab/mmcv#install-with-pip) for different versions of MMCV compatible to different PyTorch and CUDA versions.
     Optionally you can choose to compile mmcv from source by the following command
