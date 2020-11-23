@@ -48,6 +48,10 @@ The following specs were used to create the original solution.
     pip install -r requirements/build.txt
     pip install -v -e .  # or "python setup.py develop"
     ```
+6. Install h5py to read m file.
+    ```shell
+    conda install h5py
+    ```
 ### Verification
 
 To verify whether MMDetection and the required environment are installed correctly, we can run sample python codes to initialize a detector and inference a demo image:
